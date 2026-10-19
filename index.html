@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!-- 'lang="da"' er et vigtigt WCAG-krav, så skærmlæsere ved, at siden skal oplæses på dansk. -->
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <!-- 'viewport' sikrer, at websiden skaleres korrekt på mobile skærme. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forside - RUM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Semantisk <header> element samler navigation og logo øverst -->
+    <header>
+        <div class="nav-container">
+            <!-- 'aria-label' giver skærmlæsere en forklaring på, at dette link fører til forsiden -->
+            <a href="index.html" class="logo" aria-label="RUM forside">
+                <img src="logo.png" alt="RUM logo">
+                <span>RUM</span>
+            </a>
+            
+            <!-- Semantisk <nav> med 'aria-label', så skærmlæsere genkender hovedmenuen -->
+            <nav aria-label="Hovednavigation">
+                <ul>
+                    <!-- 'aria-current="page"' fortæller skærmlæseren, hvilken side brugeren står på lige nu -->
+                    <li><a href="index.html" class="active" aria-current="page">Forside</a></li>
+                    <li><a href="mental-sundhed.html">Mental sundhed</a></li>
+                    <li><a href="kontakt.html">Kontakt & støtte</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Semantisk <main> indeholder sidens unikke primære indhold -->
+    <main>
+        <!-- <section> samler hero-elementet. 'aria-labelledby' forbinder sektionen med dens overskrift -->
+        <section class="hero" aria-labelledby="hero-title">
+            <div>
+                <!-- Logisk overskriftsstruktur: Kun én <h1> pr. side -->
+                <h1 id="hero-title">Et trygt rum<br>i en travl hverdag</h1>
+                <p>RUM er et digitalt fristed for unge. Her finder du råd, inspiration og redskaber til at håndtere stress, tankemylder og hverdagens pres.</p>
+                <a href="mental-sundhed.html" class="btn">Udforsk gode råd</a>
+            </div>
+            <div>
+                <!-- WCAG 2.2: 'alt'-teksten beskriver indholdet af billedet for blinde og svagsynede -->
+                <img src="vindue.jpg"
+                     alt="En person sidder ved vinduet med en varm kop drikkevare" 
+                     class="hero-img">
+            </div>
+        </section>
+
+        <!-- Sektion med tema-bokse -->
+        <section aria-labelledby="temaer-title">
+            <!-- <h2> bruges til hovedafsnit under <h1> -->
+            <h2 id="temaer-title">Vigtige temaer</h2>
+            
+            <div class="cards-grid">
+                <!-- <article> bruges til selvstændige indholdselementer (kort/bokse) -->
+                <article class="card">
+                    <!-- 'aria-hidden="true"' får skærmlæsere til at springe ikonet over, så det ikke skaber støj -->
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <circle cx="12" cy="12" r="10"/>
+                        <polyline points="12 6 12 12 16 14"/>
+                    </svg>
+                    <!-- <h3> bruges til overskrifter inde i et underafsnit/kort -->
+                    <h3>Håndtering af stress</h3>
+                    <p>Små, overskuelige vaner i hverdagen kan gøre en stor forskel.</p>
+                    <a href="mental-sundhed.html#stress">Læs mere</a>
+                </article>
+
+                <article class="card">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                        <line x1="8" y1="21" x2="16" y2="21"/>
+                        <line x1="12" y1="17" x2="12" y2="21"/>
+                    </svg>
+                    <h3>Sunde digitale vaner</h3>
+                    <p>Gode rammer omkring skærmforbruget skaber ro i hovedet.</p>
+                    <a href="mental-sundhed.html#digitale-vaner">Læs mere</a>
+                </article>
+
+                <article class="card">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                    </svg>
+                    <h3>Hvor kan du få hjælp?</h3>
+                    <p>Gratis og anonyme steder, du kan række ud til.</p>
+                    <a href="kontakt.html">Læs mere</a>
+                </article>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

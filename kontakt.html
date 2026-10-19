@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt & støtte - RUM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo" aria-label="RUM forside">
+                <img src="logo.png" alt="RUM logo">
+                <span>RUM</span>
+            </a>
+            <nav aria-label="Hovednavigation">
+                <ul>
+                    <li><a href="index.html">Forside</a></li>
+                    <li><a href="mental-sundhed.html">Mental sundhed</a></li>
+                    <li><a href="kontakt.html" class="active" aria-current="page">Kontakt & støtte</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h1>Kontakt & støtte</h1>
+        <p>Du er ikke alene. Her kan du række ud – helt uforpligtende.</p>
+
+        <div class="two-column" style="margin-top: 3rem;">
+            <!-- Telefon-afsnit -->
+            <section aria-labelledby="telefon-titel">
+                <h2 id="telefon-titel">Ring til os</h2>
+                <p style="font-size: 1.5rem; font-weight: 700; margin-top: 1rem;">
+                    <!-- 'tel:'-link gør nummeret klikbart på mobiltelefoner -->
+                    <a href="tel:+4528688782" style="color: inherit; text-decoration: none;">+45 28688782</a>
+                </p>
+            </section>
+
+            <!-- Formular-afsnit med fuld WCAG-tilgængelighed -->
+            <section aria-labelledby="form-titel">
+                <h2 id="form-titel">Skriv til os</h2>
+                
+                <!-- <form> samler inputfelterne -->
+                <form action="#" method="post" aria-label="Kontaktformular">
+                    <div class="form-group">
+                        <!-- WCAG 2.2 KRAV: <label for="navn"> skal matche <input id="navn">.
+                             Dette gør, at skærmlæsere læser teksten op, når feltet vælges. -->
+                        <label for="navn">Navn</label>
+                        <input type="text" id="navn" name="navn" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <!-- 'type="email"' sikrer korrekt validering og mobil-tastatur med '@' -->
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="besked">Besked</label>
+                        <textarea id="besked" name="besked" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn">Send besked</button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+</body>
+</html>
